@@ -337,39 +337,39 @@ int main()
 
 
 
+void insertInTheBeginning(List *pointerToList, ListNode* pointerToNode)
+{
+    ListNode* newPtr = (ListNode*) malloc(sizeof(ListNode));
+    newPtr = pointerToNode;
+    newPtr->next = pointerToList->head;
+    pointerToList->head = newPtr;
+    (pointerToList->size)++;
+}
+void insertInTheEnd(List *pointerToList, ListNode* pointerToNode)
+{
+    ListNode* newPtr = (ListNode*) malloc(sizeof(ListNode));
 
+    newPtr = pointerToNode;
+    newPtr->next = pointerToList->tail->next;
+    pointerToList->tail->next = newPtr;
+    pointerToList->tail = newPtr;
+    (pointerToList->size)++;
+}
+void insert_In_Nth_Position_In_The_Middle(List *pointerToList, int position, ListNode* pointerToNode)
+{
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    ListNode* currentPtr;
+    currentPtr = pointerToList->head;
+    ListNode* newPtr = (ListNode*) malloc(sizeof(ListNode));
+    newPtr = pointerToNode;
+    for(int i = 0; i < position - 1; ++i)
+    {
+        currentPtr = currentPtr->next;
+    }
+    newPtr->next = currentPtr->next;
+    currentPtr->next = newPtr;
+    (pointerToList->size)++;
+}
 
 
 
